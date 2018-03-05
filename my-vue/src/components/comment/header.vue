@@ -55,10 +55,10 @@ export default {
         
        
         position:absolute;
-        top:0.1rem;
-        left:0.3rem;
-        width: 1.5rem;
-        height: 1.5rem;
+        top:0;
+        left:0;
+        width: 0.2rem;
+        height: 0.2rem;
         background: url(//img05.yiguoimg.com/e/web/161222/01856/102912/search.png) left center no-repeat;
         background-size: 100% 100%;
     } 

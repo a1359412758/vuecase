@@ -29,6 +29,7 @@ export default {
 </script>
 <style scoped>
 .app-footer{
+    border-top:1px solid #ccc;
     position:fixed;
     bottom:0;
     height:50px;
@@ -36,7 +37,7 @@ export default {
     width:100%;
     display:flex;
     justify-content: space-around;
-
+    background: #fff
 }
 .box{
     display:flex;

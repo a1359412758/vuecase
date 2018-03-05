@@ -1,5 +1,6 @@
 <template>
   <div class="main-box home">
+    <app-header></app-header>
       <app-banner></app-banner>
       <list></list>
       
@@ -8,14 +9,15 @@
   </div>
 </template>
 <script>
+import appHeader from '../../comment/header'
 import foodsBox from './foodsbox'
-import appFooter from './footer'
+import appFooter from '../../comment/footer'
 import appBanner from './banner'
 import list from './list'
 export default {
   name:'home',
   components:{
-   appBanner,list,appFooter,foodsBox
+   appBanner,list,appFooter,foodsBox,appHeader
   }
 }
 </script>
