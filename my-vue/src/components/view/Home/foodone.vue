@@ -3,15 +3,15 @@
 <div class="goods">
   <div class="good" >
        <div class="imgbox">
-         <img :src="food.componentCommoditys[0].cornerPictureUrl || ''
+         <img :src="foodo.componentCommoditys[0].cornerPictureUrl || ''
 " alt="" class='new'>
-         <img :src="food.componentCommoditys[0].pictureUrl" alt="">
+         <img :src="foodo.componentCommoditys[0].pictureUrl" alt="">
        </div>
       
       <div class='box'>
-        <p>{{food.componentCommoditys[0].commodityName}}</p>
+        <p>{{foodo.componentCommoditys[0].commodityName}}</p>
         <div>
-              <span class="price">￥{{food.componentCommoditys[0].commodityPrice}}</span><span class="unit">{{food.componentCommoditys[0].commoditySpec}}</span>
+              <span class="price">￥{{foodo.componentCommoditys[0].commodityPrice}}</span><span class="unit">{{foodo.componentCommoditys[0].commoditySpec}}</span>
         </div>
       </div>
   </div>
@@ -20,7 +20,7 @@
 <script>
 export default {
   name:'goods',
-  props:['food'],
+  props:['foodo'],
   
 }
 </script>

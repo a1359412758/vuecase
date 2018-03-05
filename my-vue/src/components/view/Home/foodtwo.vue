@@ -2,16 +2,17 @@
 <template>
 <div class="goods">
   <div class="good" >
-       <div class="imgbox">
-         <img :src="food.componentCommoditys[0].cornerPictureUrl || ''
+       <!-- <div class="imgbox">
+         <img :src="foodt.componentCommoditys[0].cornerPictureUrl || ''
 " alt="" class='new'>
-         <img :src="food.componentCommoditys[0].pictureUrl" alt="">
+         <img :src="foodt.componentCommoditys[0].pictureUrl" alt="">
        </div>
       
       <div class='box'>
-        <p>{{food.componentCommoditys[0].commodityName}}</p>
+        <p>{{foodt.componentCommoditys[0].commodityName}}</p>
         <div>
-              <span class="price">￥{{food.componentCommoditys[0].commodityPrice}}</span><span class="unit">{{food.componentCommoditys[0].commoditySpec}}</span>
+              <span class="price">￥{{foodt.componentCommoditys[0].commodityPrice}}</span><span class="unit">{{foodt.componentCommoditys[0].commoditySpec}}</span> -->
+              1243252
         </div>
       </div>
   </div>
@@ -20,7 +21,7 @@
 <script>
 export default {
   name:'goods',
-  props:['food'],
+  props:['foodt'],
   
 }
 </script>
