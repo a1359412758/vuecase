@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="app-footer">
    <div class="box">
        <i class='fa fa-home show'></i>
        <span>首页</span>
@@ -24,11 +24,11 @@
 </template>
 <script>
 export default {
-  name:'footer'
+  name:'app-footer'
 }
 </script>
 <style scoped>
-.footer{
+.app-footer{
     position:fixed;
     bottom:0;
     height:50px;
