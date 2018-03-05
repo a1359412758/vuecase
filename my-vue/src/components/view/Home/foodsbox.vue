@@ -39,12 +39,12 @@ export default {
 </script>
 <style scoped>
 img{
-        margin: 0;
+     margin: 0;
     padding: 0;
     outline: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-        width: 100%;
-    height: 8.5rem;
+    width: 100%;
+    height: 1.5rem;
     border: 0;
     vertical-align: middle;
 }
