@@ -12,14 +12,17 @@
        <i class='fa fa-free-code-camp'></i>
        <span>吃饭吧</span>
    </div>
-   <div class="box">
+  <div class="box">
        <i class='fa fa-shopping-cart'></i>
        <span>购物车</span>
    </div>
-   <div class="box">
-       <i class='fa fa-user-o'></i>
-       <span>我的易果</span>
-   </div>
+   
+   
+	   <router-link class="box"   tag='div'>
+	       <i class='fa fa-user-o'></i>
+	       <span>我的易果</span>
+	   </router-link>
+   
   </div>
 </template>
 <script>
@@ -29,6 +32,7 @@ export default {
 </script>
 <style scoped>
 .app-footer{
+	left:0;
     border-top:1px solid #ccc;
     position:fixed;
     bottom:0;
