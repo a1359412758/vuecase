@@ -1,33 +1,38 @@
 <template>
   <div class="app-footer">
-   <div class="box">
-       <i class='fa fa-home show'></i>
+   <router-link :to="{name:'home'}" class="box show" tag='div'>
+       <i class='fa fa-home' ></i>
        <span>首页</span>
-   </div>
-   <div class="box">
-       <i class='fa fa-th-large'></i>
+   </router-link>
+   <router-link :to="{name:'list'}" class="box" tag='div'>
+       <i class='fa fa-th-large' ></i>
        <span>分类</span>
-   </div>
-   <div class="box">
+   </router-link>
+   <router-link :to="{name:'shop'}" class="box" tag='div'>
        <i class='fa fa-free-code-camp'></i>
        <span>吃饭吧</span>
-   </div>
-  <div class="box">
+
+   </router-link >
+ 
+   
+
+   </router-link>
+   <router-link :to="{name:'cars'}" tag='div'  class="box">
        <i class='fa fa-shopping-cart'></i>
        <span>购物车</span>
-   </div>
-   
-   
-	   <router-link class="box"   tag='div'>
-	       <i class='fa fa-user-o'></i>
-	       <span>我的易果</span>
-	   </router-link>
-   
+   </router-link>
+   <router-link :to="{name:'mine'}" class="box" tag='div'>
+       <i class='fa fa-user-o'></i>
+       <span>我的易果</span>
+   </router-link>
+
   </div>
 </template>
 <script>
 export default {
-  name:'app-footer'
+  name:'app-footer',
+  
+  
 }
 </script>
 <style scoped>
@@ -41,7 +46,8 @@ export default {
     width:100%;
     display:flex;
     justify-content: space-around;
-    background: #fff
+    background: #fff;
+    left:0;
 }
 .box{
     display:flex;
@@ -54,11 +60,16 @@ export default {
    text-align: center;
     font-size: 12px;
 }
-.show{
+.box{
+    color: black;
+}
+.router-link-exact-active{
     color:forestgreen;
     
 }
+
 .fa{
     font-size: 22px!important;
 }
+
 </style>

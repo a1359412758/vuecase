@@ -3,7 +3,7 @@
       <div class="swiper-container banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="banner in banners" :key="banner.id">
-             <img width="100%" :src="banner.pictureUrl" alt="">
+             <img width="100%" height="100%" :src="banner.pictureUrl" alt="">
           </div>
         </div>
       <!-- 如果需要分页器 -->
@@ -52,7 +52,7 @@ export default {
 </script>
 <style>
 .app-banner{
- 
+ height:217px;
 }
 </style>
 
