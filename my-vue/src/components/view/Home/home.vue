@@ -3,7 +3,7 @@
     <app-header></app-header>
       <app-banner></app-banner>
       <list></list>
-      
+      <classify></classify>
       <foods-box></foods-box>
       <app-footer></app-footer>
   </div>
@@ -14,10 +14,11 @@ import foodsBox from './foodsbox'
 import appFooter from '../../comment/footer'
 import appBanner from './banner'
 import list from './list'
+import classify from './classify'
 export default {
   name:'home',
   components:{
-   appBanner,list,appFooter,foodsBox,appHeader
+   appBanner,list,appFooter,foodsBox,appHeader,classify
   }
 }
 </script>

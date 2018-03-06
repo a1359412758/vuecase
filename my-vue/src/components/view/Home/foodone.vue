@@ -10,7 +10,7 @@
       
       <div class='box'>
         <p>{{foodo.componentCommoditys[0].commodityName}}</p>
-        <div>
+        <div class="infobox">
               <span class="price">￥{{foodo.componentCommoditys[0].commodityPrice}}</span><span class="unit">{{foodo.componentCommoditys[0].commoditySpec}}</span>
         </div>
       </div>
@@ -60,9 +60,14 @@ export default {
      font-size: 10px;
    }
    .new{
-     width:40px;
-     height: 40px;
+     width:30px;
+     height: 30px;
      position: absolute;
+     left:10px;
+   }
+   .infobox{
+     box-sizing: border-box;
+     padding-bottom: 5px;
    }
 
 

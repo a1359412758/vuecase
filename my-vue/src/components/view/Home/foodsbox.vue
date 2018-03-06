@@ -15,7 +15,8 @@ export default {
   data(){
       return{
       foodsone:[],
-      foodstwo:[]
+      foodstwo:[],
+      
       }
      
   },
@@ -27,14 +28,21 @@ export default {
          axios.post('http://h5homeapi.yiguo.com/api/Template/GetTemplate',{"Area":{"Default":0,"Version":"2.0","Id":"eabbe02f-59e0-46e6-90e7-cd8a89dbb98f","Name":"北京","Code":2,"DId":"c8d9363c-fc0a-4f7b-9a18-3aedbbc83e57","DName":"昌平区"},"token":"","Channel":5}).then(res=>{
             //  console.log(res.data.data.template.componentList[8].componentCommoditys[0].commodityName)
            this.foodsone = res.data.data.template.componentList.splice(8,13)
-           console.log(this.foodsone[0].componentCommoditys[0].pictureUrl)
+           //console.log(this.foodsone[0].componentCommoditys[0].pictureUrl)
            })
       },
       getfoodtwo(){
          axios.post('http://h5homeapi.yiguo.com/api/Template/GetTemplate',{"Area":{"Default":0,"Version":"2.0","Id":"eabbe02f-59e0-46e6-90e7-cd8a89dbb98f","Name":"北京","Code":2,"DId":"c8d9363c-fc0a-4f7b-9a18-3aedbbc83e57","DName":"昌平区"},"token":"","Channel":5}).then(res=>{
             //  console.log(res.data.data.template.componentList[8].componentCommoditys[0].commodityName)
-           this.foodstwo = res.data.data.template.componentList.splice(14,20)
-           console.log(this.foodstwo[0].componentCommoditys[0])
+           res.data.data.template.componentList.splice(15,19).forEach(good=>{
+               //console.log(good)
+                this.foodstwo.push(good)
+                
+             this.foodstwo.splice(6)
+              
+               return this.foodstwo
+           })
+           //console.log(this.foodstwo)
            })
       }
   },
@@ -63,3 +71,4 @@ img{
 
 </style>
 
+f
