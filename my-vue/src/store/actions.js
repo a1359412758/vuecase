@@ -3,14 +3,14 @@ const actions={
 
     getcargoods(store){
         setTimeout(()=>{
-            let good = [];
-             store.commit('getcargoods',good)
+            
+             store.commit('getcargoods',JSON.parse(localStorage.cargoods))
         },100)
     },
-    addcargoods(store,{id,price,desc,type}){
+    addcargoods(store,{id,price,desc,type,url}){
        
         setTimeout(()=>{
-             store.commit('addcargoods',{id,price,desc,type})
+             store.commit('addcargoods',{id,price,desc,type,url})
         },100)
     }
 }

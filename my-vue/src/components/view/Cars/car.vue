@@ -19,14 +19,16 @@
                 <div class="hasgood" v-for="good in cargoods" :key='good.id'>
                <input class="lbtn" type="checkbox" >
                
-                   <img class="goodimg" src="" alt="">
+                   <img class="goodimg" :src="good.url" alt="">
                <div class="showbox">
                    <span>{{good.desc}}</span>
                    <span>￥{{good.price}}</span>
                </div>
                <div class="rbox">
                    <span class="fa fa-trash-o"></span>
-                   <p><span class='left'  @click="addgoods(good.id,good.price,good.desc,-1)">-</span><span class='num'>{{good.num}}</span><span class='right' @click="addgoods(good.id,good.price,good.desc,1)">+</span></p>
+                   <p><span class='left'  @click.stop="addgoods({id:good.id,price:good.price,desc:good.desc,type:-1,url:good.url})">-</span>
+                   <input class='num' v-model='good.num'/>
+                   <span class='right' @click.stop="addgoods({id:good.id,price:good.price,desc:good.desc,type:1,url:good.url})">+</span></p>
                </div>
                </div>
             </div>
@@ -37,7 +39,7 @@
                         <img class="dfimg" :src="data.componentCommoditys[0].pictureUrl" alt="">
                         <span>{{data.componentCommoditys[0].commodityName}}</span>
                         <div class='pricebox'>
-                        <span class='price'>￥{{data.componentCommoditys[0].commodityPrice}}</span><span class="btn" @click="addgoods({id:data.componentCommoditys[0].commodityCode,price:data.componentCommoditys[0].commodityPrice,desc:data.componentCommoditys[0].commodityName,type:1})">+</span>
+                        <span class='price'>￥{{data.componentCommoditys[0].commodityPrice}}</span><span class="btn" @click.stop="addgoods({id:data.componentCommoditys[0].commodityCode,price:data.componentCommoditys[0].commodityPrice,desc:data.componentCommoditys[0].commodityName,type:1,url:data.componentCommoditys[0].pictureUrl})">+</span>
                         </div>
                     </div>
                 </div>
@@ -69,14 +71,14 @@ export default {
          axios.post('http://h5homeapi.yiguo.com/api/Template/GetTemplate',{"Area":{"Default":0,"Version":"2.0","Id":"eabbe02f-59e0-46e6-90e7-cd8a89dbb98f","Name":"北京","Code":2,"DId":"c8d9363c-fc0a-4f7b-9a18-3aedbbc83e57","DName":"昌平区"},"token":"","Channel":5}).then(res=>{
             //  console.log(res.data.data.template.componentList[8].componentCommoditys[0].commodityName)
            this.defaultlist = res.data.data.template.componentList.splice(8,12)
-           console.log(this.defaultlist[0])
+           console.log(this.defaultlist[0].componentCommoditys[0].commodityCode)
            })
       },
       ...mapActions(['getcargoods','addcargoods']),
       ...mapMutations(['getetcargoods']),
-      addgoods({id,price,desc,type}){
+      addgoods({id,price,desc,type,url}){
           
-          this.addcargoods({id,price,desc,type})
+          this.addcargoods({id,price,desc,type,url})
       }
   },
   created(){
@@ -186,14 +188,15 @@ export default {
     display: flex;
     flex-flow:wrap;
     justify-content: space-between;
-    
+    padding-bottom:60px;
 }
 .dfgood{
     width:50%;
     
     display: flex;
+    
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center
 }
 .dfimg{
@@ -227,6 +230,7 @@ export default {
     background: pink; 
 }
 .showbox,.rbox{
+    width:25%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -240,7 +244,7 @@ export default {
     padding:4px 5px;
 }
 .left,.right{
-    width:20px;
+    width:25%;
     height: 20px;
     display: block;
     border:1px solid skyblue;
@@ -255,6 +259,8 @@ export default {
     border: 1px solid skyblue;
     height: 20px;
     line-height: 20px;
+    width:50%;
+    text-align: center;
 }
 .fa{
     margin-left:70%;
