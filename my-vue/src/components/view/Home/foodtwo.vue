@@ -27,6 +27,9 @@
 export default {
   name:'goods',
   props:['foodt'],
+  created(){
+    console.log(this.foodt)
+  }
   
 }
 </script>
