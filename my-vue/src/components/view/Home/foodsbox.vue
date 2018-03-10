@@ -38,7 +38,7 @@ export default {
                //console.log(good)
                 this.foodstwo.push(good)
                 
-             this.foodstwo.splice(5)
+             this.foodstwo.splice(4)
               
                return this.foodstwo
            })

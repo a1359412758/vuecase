@@ -3,7 +3,7 @@
    <div class="login">
        <div class='loginbox' v-if='!username'>
        <span class='info'>登陆可同步购物车商品</span>
-       <button class='loginbtn'>登录</button>
+       <router-link :to="{name:'login'}" tag='button' class='loginbtn'>登录</router-link>
        </div>
        <div class="cut">全场满100包邮，还差<span class='money'>100.00</span>元包邮</div>
   </div>
@@ -35,11 +35,11 @@
             <div class="like">
                 <div class="title">猜你喜欢</div>
                 <div class="dfbox">
-                    <div class="dfgood" v-for="data in defaultlist" :key='data.componentCommoditys[0].commodityCode'>
-                        <img class="dfimg" :src="data.componentCommoditys[0].pictureUrl" alt="">
-                        <span>{{data.componentCommoditys[0].commodityName}}</span>
+                    <div class="dfgood" v-for="data in defaultlist" :key='data.commodityCode'>
+                        <img class="dfimg" :src="data.pictureUrl" alt="">
+                        <span>{{data.commodityName}}</span>
                         <div class='pricebox'>
-                        <span class='price'>￥{{data.componentCommoditys[0].commodityPrice}}</span><span class="btn" @click.stop="addgoods({id:data.componentCommoditys[0].commodityCode,price:data.componentCommoditys[0].commodityPrice,desc:data.componentCommoditys[0].commodityName,type:1,url:data.componentCommoditys[0].pictureUrl})">+</span>
+                        <span class='price'>￥{{data.commodityPrice}}</span><span class="btn" @click.stop="addgoods({id:data.commodityCode,price:data.commodityPrice,desc:data.commodityName,type:1,url:data.pictureUrl})">+</span>
                         </div>
                     </div>
                 </div>
@@ -70,8 +70,8 @@ export default {
       getdefaultlist(){
          axios.post('http://h5homeapi.yiguo.com/api/Template/GetTemplate',{"Area":{"Default":0,"Version":"2.0","Id":"eabbe02f-59e0-46e6-90e7-cd8a89dbb98f","Name":"北京","Code":2,"DId":"c8d9363c-fc0a-4f7b-9a18-3aedbbc83e57","DName":"昌平区"},"token":"","Channel":5}).then(res=>{
             //  console.log(res.data.data.template.componentList[8].componentCommoditys[0].commodityName)
-           this.defaultlist = res.data.data.template.componentList.splice(8,12)
-           console.log(this.defaultlist[0].componentCommoditys[0].commodityCode)
+           this.defaultlist = res.data.data.template.componentList[17].componentCommoditys
+           console.log(this.defaultlist)
            })
       },
       ...mapActions(['getcargoods','addcargoods']),
@@ -99,7 +99,7 @@ export default {
     z-index: 9999;
     position: fixed;
     width:100%;
-   
+   background:#fff;
     box-sizing: border-box;
     
    

@@ -48,6 +48,7 @@ export default {
     justify-content: space-around;
     background: #fff;
     left:0;
+    z-index: 99999999;
 }
 .box{
     display:flex;

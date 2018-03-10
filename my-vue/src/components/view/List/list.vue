@@ -71,6 +71,11 @@ export default {
     border-bottom:1px solid #f4f4f4;
     padding:8px 10px;
     box-sizing: border-box;
+    position fixed;
+    top:0;
+    left:0;
+    z-index :9999999;
+    background :#fff;
   .icon
     display:block;
     position:absolute;
@@ -138,8 +143,10 @@ export default {
     padding:40px 0 0 .7rem;
     overflow-y :hidden;
     width:100%;
+    box-sizing:border-box;
   .commodityBox 
-
+    box-sizing:border-box;
+    overflow-x hidden;
     
     overflow-y: scroll;
   .gooditem

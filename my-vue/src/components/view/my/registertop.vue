@@ -6,7 +6,7 @@
 	 	  	   	    <img alt=" 用户头像" src="http://img02.yiguo.com/e/web/150703/00781/140145/no-pic.jpg">
 	 	  	   </div>
 	 	  	   <div class="regiseter-right">
-	 	  	   	    <div class="login">登录</div>&nbsp;&nbsp;<div class="register">注册</div>
+	 	  	   	    <router-link :to='{name:"login"}' tag="div" class="login">登录</router-link>&nbsp;&nbsp;<router-link :to='{name:"register"}' tag="div" class="register">注册</router-link>
 	 	  	   </div>
 	 	  </div>
 	 	  <div class="register-nav">
