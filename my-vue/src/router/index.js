@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/view/Home/home'
+import List from '../components/view/List/list'
 
 import Mine from '../components/view/my/My'
 
@@ -18,6 +19,16 @@ var router = new Router({
       component: Home
     },
     {
+
+
+      path: '/list',
+      name: 'list',
+      component: List
+    
+    },
+   
+    {
+
     	path:'/mine',
     	name:'mine',
     	component:Mine
@@ -33,10 +44,12 @@ var router = new Router({
     	component:Resgiset
     },
 {
+
       path: '/cars',
       name: 'cars',
       component: Cars
     }
+
 
   ]
 })
